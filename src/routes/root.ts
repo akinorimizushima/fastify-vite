@@ -3,7 +3,7 @@ import { Static, Type } from "@sinclair/typebox";
 
 export const route = async (fastify: FastifyInstance) => {
   fastify.get("/", async () => {
-    return { hello: "world" };
+    return { hello: "world23345" };
   });
 };
 

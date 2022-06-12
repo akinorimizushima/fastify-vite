@@ -3,7 +3,7 @@ import { route } from "./routes/root.js";
 import { ApolloServer, gql } from "apollo-server-fastify";
 import fs from "fs";
 import path from "path";
-import * as resolvers from "./resolvers.js";
+import * as resolvers from "./resolvers";
 import { dirname } from "path";
 import { fileURLToPath } from "url";
 
@@ -17,9 +17,8 @@ const server = new ApolloServer({
   resolvers,
 });
 
-const app = Fastify({ logger: true });
-
 const startServer = async () => {
+  const app = Fastify({ logger: true });
   await server.start();
   app.register(server.createHandler());
   app.register(route);
@@ -35,4 +34,4 @@ const startServer = async () => {
   return app;
 };
 
-export const viteNodeApp = startServer();
+export const app = startServer();

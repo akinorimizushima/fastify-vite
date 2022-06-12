@@ -1,0 +1,8 @@
+type Todo {
+    name: String,
+}
+
+type TodoQuery {
+    todos: [Todo]
+}
+

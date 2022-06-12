@@ -3,7 +3,13 @@ type Book {
     author: String
 }
 
+type Author {
+    name: String
+    books: [Book]
+}
+
 type Query {
     books: [Book!]!
+    authors: [Author]
 }
 

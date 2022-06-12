@@ -3,13 +3,14 @@ import { VitePluginNode } from "vite-plugin-node";
 
 export default defineConfig({
   server: {
+    host: true,
     port: 3000,
   },
   plugins: [
     ...VitePluginNode({
       adapter: "fastify",
       appPath: "./src/app.ts",
-      exportName: "viteNodeApp",
+      exportName: "app",
       tsCompiler: "esbuild",
     }),
   ],
